@@ -1,0 +1,40 @@
+[25.392055511] 2018-07-11 17:34:56,563 - INFO - launcher: Starting sanity checks
+[25.392055511] 2018-07-11 17:34:56,563 - INFO - launcher: Checking for Python 3.5+
+[25.880336761] 2018-07-11 17:34:56,563 - INFO - launcher: Checking console encoding
+[25.880336761] 2018-07-11 17:34:56,563 - INFO - launcher: Setting console encoding to UTF-8
+[25.880336761] 2018-07-11 17:34:56,563 - INFO - launcher: Ensuring we're in the right environment
+[26.856422424] 2018-07-11 17:34:56,564 - INFO - launcher: Adding local bins/ folder to path
+[27.344703674] 2018-07-11 17:34:56,565 - INFO - launcher: Required checks passed.
+[27.344703674] 2018-07-11 17:34:56,565 - INFO - launcher: Optional checks passed.
+[27.832746506] 2018-07-11 17:34:56,565 - INFO - launcher: Moving old musicbot log
+
+######################### PRE-RUN SANITY CHECKS PASSED #########################
+
+[0.8818743228912354] 2018-07-11 17:34:57,419 - WARNING - musicbot.config | In config.py::MainThread(7488), line 112 in run_checks: i18n file does not exist. Trying to fallback to config/i18n/en.json.
+[0.8818743228912354] 2018-07-11 17:34:57,419 - INFO - musicbot.config | In config.py::MainThread(7488), line 123 in run_checks: Using i18n: config/i18n/en.json
+[0.8843154907226562] 2018-07-11 17:34:57,422 - DEBUG - musicbot.json | In json.py::MainThread(7488), line 8 in __init__: Init JSON obj with config/i18n/en.json
+[0.8848037719726562] 2018-07-11 17:34:57,422 - ERROR - musicbot.json | In json.py::MainThread(7488), line 18 in parse: Error parsing config/i18n/en.json as JSON
+Traceback (most recent call last):
+  File "F:\MusicBot\musicbot\json.py", line 16, in parse
+    parsed = json.load(data)
+  File "C:\Users\teddy\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 299, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "C:\Users\teddy\AppData\Local\Programs\Python\Python36\lib\json\__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\teddy\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\teddy\AppData\Local\Programs\Python\Python36\lib\json\decoder.py", line 355, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Invalid \escape: line 5 column 60 (char 201)
+[0.885779858] launcher-ERROR: Error starting bot
+Traceback (most recent call last):
+  File "run.py", line 348, in main
+    m = MusicBot()
+  File "F:\MusicBot\musicbot\bot.py", line 74, in __init__
+    self.str = Json(self.config.i18n_file)
+  File "F:\MusicBot\musicbot\json.py", line 10, in __init__
+    self.data = self.parse()
+  File "F:\MusicBot\musicbot\json.py", line 19, in parse
+    return parsed
+UnboundLocalError: local variable 'parsed' referenced before assignment
+[0.888710260] launcher-INFO: All done.
